@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doggo Dreams - Login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <a href="index.html"><img class="logo" src="weglogo.jpg" alt="Website logo"></a>
+        <h2 class="title">Doggo <br><span class="special">Dreams</span></h2>
+        <h3 class="subtitle">Welcome to Our humble world</h3>
+        <div id="currentTime" class="subtitle"></div>
+    </header>
+
+    <h2>Login</h2>
+    <form action="/login" method="post">
+        <label for="username">Username:</label>
+        <input type="text" placeholder="john123" id="username" name="username" required><br>
+        <label for="password">Password:</label>
+        <input type="password" placeholder="abcd1234" id="password" name="password" required><br>
+        <button type="submit">Login</button>
+    </form>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 Doggo Dreams. All rights reserved.</p>
+            <a href="#" onclick="showDisclaimer()">Privacy/Disclaimer Statement</a>
+        </div>
+    </footer>
+
+    <script>
+        function showDisclaimer() {
+            alert("We promise that your information will not be sold or misused. This website builder is not responsible for any incorrect information posted by a pet owner.");
+        }
+    </script>
+</body>
+</html>

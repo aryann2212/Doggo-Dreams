@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doggo Dreams</title>
+    <link rel="stylesheet" href="style.css">
+
+    <script>
+        function updateTime() {
+            const now = new Date();
+            const formattedTime = now.toLocaleString('en-US', {
+                year: 'numeric',
+                month: 'short',
+                day: 'numeric',
+                hour: 'numeric',
+                minute: 'numeric',
+                second: 'numeric',
+                hour12: true
+            });
+            document.getElementById('currentTime').textContent = formattedTime;
+        }
+        document.addEventListener('DOMContentLoaded', function() {
+            updateTime();
+            setInterval(updateTime, 1000);
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <a href="index.html"><img class="logo" src="weglogo.jpg" alt="Website logo"></a>
+        <h2 class="title">Doggo <br><span class="special">Dreams</span></h2>
+        <h3 class="subtitle">Welcome to Our humble world</h3>
+        <div id="currentTime" class="subtitle"></div>
+    </header>
+
+    <div class="side-menu">
+        <h1>Our Services</h1>
+        <a href="index.html"><h3>Home</h3></a>
+        <a href="browse.html"><h3>Browse Available Pets</h3></a>
+        <a href="findpet.html"><h3>Find a Pet</h3></a>
+        <a href="petcare.html"><h3>Dog Care</h3></a>
+        <a href="petgiveaway.html"><h3>Have a Pet to Give Away</h3></a>
+        <a href="register.html"><h3>Create Account</h3></a>
+        <a href="contact.html"><h3>Contact Us</h3></a>
+        <a href="/logout"><h3>Logout</h3></a>
+    </div>
+    <div class="GR">
+        <img class="gr-img" src="GR.jpg" alt="Image of a Golden Retriever">
+        <img class="stz-img" src="STZ.jpg" alt="Image of a Shih Tzu">
+        <img class="dogos" src="doggos.jpg" alt="Image of Dogs">
+    </div>
+    <div>
+        <p class="dog-text">
+            <b>Doggo Dreams</b>: Your ultimate destination for all things dog-related. Whether you're looking to adopt a new furry friend or seeking expert advice on dog care, we've got you covered. Explore our resources on pet health, grooming, training, and nutrition. Find adoptable pets, learn about responsible pet ownership, and discover tips to ensure your dog's happiness and well-being. Join our community and give a pet in need a loving home.
+        </p>
+    </div>
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 Doggo Dreams. All rights reserved.</p>
+            <a href="#" onclick="showDisclaimer()">Privacy/Disclaimer Statement</a>
+        </div>
+    </footer>
+</body>
+</html>

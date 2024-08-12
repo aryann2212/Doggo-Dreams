@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doggo Dreams - Register</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        function updateTime() {
+            const now = new Date();
+            const formattedTime = now.toLocaleString('en-US', {
+                year: 'numeric',
+                month: 'short',
+                day: 'numeric',
+                hour: 'numeric',
+                minute: 'numeric',
+                second: 'numeric',
+                hour12: true
+            });
+            document.getElementById('currentTime').textContent = formattedTime;
+        }
+        document.addEventListener('DOMContentLoaded', function() {
+            updateTime();
+            setInterval(updateTime, 1000);
+        });
+    </script>
+</head>
+<body>
+    <div class="side-menu">
+        <h1>Our Services</h1>
+        <a href="index.html"><h3>Home</h3></a>
+        <a href="browse.html"><h3>Browse Available Pets</h3></a>
+        <a href="findpet.html"><h3>Find a Pet <br></h3></a>
+        <a href="petcare.html"><h3>Dog Care</h3></a>
+        <a href="petgiveaway.html"><h3>Have a Pet to Give Away</h3></a>
+        <a href="register.html"><h3>Create Account</h3></a> <!-- Added Create Account link -->
+        <a href="contact.html"><h3>Contact Us</h3></a>
+        <a href="/logout"><h3>Logout</h3></a>
+    </div>
+    <header>
+        <a href="index.html"><img class="logo" src="weglogo.jpg" alt="Website logo"></a>
+        <h2 class="title">Doggo <br><span class="special">Dreams</span></h2>
+        <h3 class="subtitle">Welcome to Our humble world</h3>
+        <div id="currentTime" class="subtitle"></div>
+    </header>
+
+    <h2>Register</h2>
+    <form action="/register" method="post">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required><br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required><br>
+        <button type="submit">Register</button>
+    </form>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 Doggo Dreams. All rights reserved.</p>
+            <a href="#" onclick="showDisclaimer()">Privacy/Disclaimer Statement</a>
+        </div>
+    </footer>
+
+    <script>
+        function showDisclaimer() {
+            alert("We promise that your information will not be sold or misused. This website builder is not responsible for any incorrect information posted by a pet owner.");
+        }
+    </script>
+</body>
+</html>

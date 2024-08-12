@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find a Pet</title>
+    <link rel="stylesheet" href="style.css">
+
+    <script>
+        // Function to update the current time
+        function updateTime() {
+            const now = new Date();
+            const formattedTime = now.toLocaleString('en-US', {
+                year: 'numeric',
+                month: 'short',
+                day: 'numeric',
+                hour: 'numeric',
+                minute: 'numeric',
+                second: 'numeric',
+                hour12: true
+            });
+            document.getElementById('currentTime').textContent = formattedTime;
+        }
+
+        // Event listener to update time on page load and every second
+        document.addEventListener('DOMContentLoaded', function() {
+            updateTime();
+            setInterval(updateTime, 1000);
+        });
+
+        // Function to validate the form
+        function validateForm(event) {
+            event.preventDefault();
+            let isValid = true;
+            let errorMessage = '';
+
+            const petType = document.getElementById('pet-type').value;
+            const breed = document.getElementById('breed').value;
+
+            if (petType === '') {
+                isValid = false;
+                errorMessage += 'Please select a pet type.\n';
+            }
+            if (breed === '') {
+                isValid = false;
+                errorMessage += 'Please select a breed.\n';
+            }
+
+            if (!isValid) {
+                document.getElementById('error-message').textContent = errorMessage;
+                return false;
+            } else {
+                document.getElementById('error-message').textContent = '';
+                document.querySelector('form').submit(); // Submit the form if validation passes
+            }
+        }
+
+        // Event listener to validate form on submit
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelector('form').addEventListener('submit', validateForm);
+        });
+    </script>
+</head>
+<body>
+    <a href="/login">
+        <button type="button">Login</button>
+    </a>
+    <header>
+        <a href="index.html"><img class="logo" src="weglogo.jpg" alt="Website logo"></a>
+        <h2 class="title">Doggo <br><span class="special">Dreams</span></h2>
+        <h3 class="subtitle">Welcome to Our humble world</h3>
+        <div id="currentTime" class="subtitle"></div>
+    </header>
+    <div class="content">
+        <h2>Find a Pet</h2>
+        <form action="/findpet" method="post">
+            <label for="pet-type">Cat or Dog</label>
+            <select id="pet-type" name="pet-type" required>
+                <option value="">Select</option>
+                <option value="cat">Cat</option>
+                <option value="dog">Dog</option>
+            </select>
+            
+            <label for="breed">Breed</label>
+            <select id="breed" name="breed" required>
+                <option value="">Select</option>
+                <option value="any">Doesn't Matter</option>
+                <option value="Golden Retriever">Golden Retriever</option>
+                <option value="Poodle">Poodle</option>
+                <option value="Shih tzu">Shih tzu</option>
+                <option value="Ragdoll">Ragdoll</option>
+                <option value="Persian">Persian</option>
+                <option value="british shorthair">British shorthair</option>
+            </select>
+
+            
+            <label for="age">Preferred Age</label>
+            <select id="age" name="age">
+                <option value="any">Doesn't Matter</option>
+                <option value="puppy">Puppy/Kitten</option>
+                <option value="adult">Adult</option>
+                <option value="senior">Senior</option>
+            </select>
+            
+            <label for="gender">Preferred Gender</label>
+            <select id="gender" name="gender">
+                <option value="any">Doesn't Matter</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+            </select>
+
+            
+            <label>
+                <input type="checkbox" name="compatibility" value="dogs"> Gets along with other dogs
+            </label>
+            <label>
+                <input type="checkbox" name="compatibility" value="cats"> Gets along with other cats
+            </label>
+            <label>
+                <input type="checkbox" name="compatibility" value="children"> Gets along with small children
+            </label>
+
+            <div id="error-message" class="error"></div>
+            
+            <div class="form-actions">
+                <button type="submit">Submit</button>
+                <button type="reset">Clear</button>
+            </div>
+        </form>
+    </div>
+    <div class="side-menu">
+        <h1>Our Services</h1>
+        <a href="index.html"><h3>Home</h3></a>
+            <a href="browse.html"><h3>Browse Available Pets</h3></a>
+            <a href="findpet.html"><h3>Find a Pet <br></h3></a>
+            <a href="petcare.html"><h3>Dog Care</h3></a>
+            <a href="petgiveaway.html"><h3>Have a Pet to Give Away</h3></a>
+            <a href="register.html"><h3>Create Account</h3></a> <!-- Added Create Account link -->
+            <a href="contact.html"><h3>Contact Us</h3></a>
+            <a href="/logout"><h3>Logout</h3></a>
+    </div>
+</body>
+</html>

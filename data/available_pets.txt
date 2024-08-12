@@ -1,0 +1,11 @@
+1:aaa:undefined:Golden Retriever:adult:male
+2:aaa:undefined:any:any:any
+3:aaa:undefined:Golden Retriever:puppy:male
+4:aaa:undefined:Poodle:adult:female
+5:aaa:undefined:Poodle:adult:female
+6:aaa:undefined:Golden Retriever:senior:female
+7:aaa:undefined:Golden Retriever:puppy:male
+8:aaa:undefined:Poodle:senior:female
+9:aaa:undefined:Shih tzu:adult:female
+10:john123:undefined:Ragdoll:adult:female
+11:john123:undefined:Golden Retriever:adult:male

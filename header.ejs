@@ -1,0 +1,25 @@
+<header>
+    <a href="/"><img class="logo" src="/images/weglogo.jpg" alt="Website logo"></a>
+    <h2 class="title">Doggo <br><span class="special">Dreams</span></h2>
+    <h3 class="subtitle">Welcome to Our humble world</h3>
+    <div id="currentTime" class="subtitle"></div>
+</header>
+<script>
+    function updateTime() {
+        const now = new Date();
+        const formattedTime = now.toLocaleString('en-US', {
+            year: 'numeric',
+            month: 'short',
+            day: 'numeric',
+            hour: 'numeric',
+            minute: 'numeric',
+            second: 'numeric',
+            hour12: true
+        });
+        document.getElementById('currentTime').textContent = formattedTime;
+    }
+    document.addEventListener('DOMContentLoaded', function() {
+        updateTime();
+        setInterval(updateTime, 1000);
+    });
+</script>

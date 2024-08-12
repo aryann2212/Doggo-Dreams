@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doggo Dreams</title>
+   <a href="index.html"> <img class="logo" src="weglogo.jpg" alt="Website logo"></a>
+    <h2 class="title">Doggo <br>Dreams</h2>
+    <link rel="stylesheet" href="style.css">
+    <script>
+    function updateTime() {
+            const now = new Date();
+            const formattedTime = now.toLocaleString('en-US', {
+                year: 'numeric',
+                month: 'short',
+                day: 'numeric',
+                hour: 'numeric',
+                minute: 'numeric',
+                second: 'numeric',
+                hour12: true
+            });
+            document.getElementById('currentTime').textContent = formattedTime;
+        }
+
+        // Event listener to update time on page load and every second
+        document.addEventListener('DOMContentLoaded', function() {
+            updateTime();
+            setInterval(updateTime, 1000);
+        });
+    </script>
+
+    </head>
+    
+<body>
+    <div class="side-menu">
+        <h1>Our Services</h1>
+        <a href="index.html"><h3>Home</h3></a>
+            <a href="browse.html"><h3>Browse Available Pets</h3></a>
+            <a href="findpet.html"><h3>Find a Pet <br></h3></a>
+            <a href="petcare.html"><h3>Dog Care</h3></a>
+            <a href="petgiveaway.html"><h3>Have a Pet to Give Away</h3></a>
+            <a href="register.html"><h3>Create Account</h3></a> <!-- Added Create Account link -->
+            <a href="contact.html"><h3>Contact Us</h3></a>
+            <a href="/logout"><h3>Logout</h3></a>
+    </div>
+    <div class="contact">
+<h3>Name: Aryan Kotecha</h3>
+<h3>Email: aryankotecha2@gmail.com</h3>
+<a href="https://www.linkedin.com/in/aryankotecha/"><h3>Linkedin</h3></a>
+<a href="https://fabulousnaturephotography.blogspot.com/"><h3>Blog</h3></a>
+</div>
+</body>
+</html>
+
